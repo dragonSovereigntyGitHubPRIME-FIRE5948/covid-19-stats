@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L10 Assignment</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- DataTables.js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <!-- Fullpage.js -->
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
+    <link href="stylesheet/styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <nav class="topnav">
+        <h1 class="title">The Lion Press</h1>
+        <a href="#section1" class="">Covid-19 Details</a>
+        <a href="#section2" class="">Vaccination Progress</a>
+        <!-- <div class="nav-dropdown">
+            <a href="#portfolios" class="#">Portfolios<i class="fa fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a href="#">Portfolio 1</a>
+                <a href="#">Portfolio 2</a>
+                <a href="#">Portfolio 3</a>
+            </div>
+        </div> -->
+        <a href="#section3">Vaccination Centres</a>
+    </nav>
+
+
+    <div id="fullpage">
+
+        <!-- section 1 -->
+        <div class="section">
+            <div class="slide">
+                <div class="row">
+
+                    <!-- s1 part 1 -->
+                    <div class="col w-40 h-100">
+                        <!-- <table id="example" class="display" width="100%"></table> -->
+                        <div class="col w-80">
+                            <p class="title">Covid-19 Case Data</p>
+                            <canvas id="multi_pieChart"></canvas>
+                            <p class="sources">Sources: data.gov.sg, moh.gov.sg</p>
+                        </div>
+                    </div>
+
+                    <div class="container-relative">
+                        <?xml version="1.0" encoding="UTF-8"?><svg class="divider s1-divider"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 323.29">
+                            <line class="cls-1" x1="4" x2="4" y2="323.29" />
+                        </svg>
+                    </div>
+
+                    <!-- s1 part 2 -->
+                    <div class="col w-53">
+                        <!-- s1 part 2i -->
+                        <div class="col w-100 flex-col h-100">
+                            <p class="title">No. of Cases by Quarterly Year (2020 - 2022)</p>
+                            <canvas id="lineChart"></canvas>
+                            <p class="sources">Sources: data.gov.sg, moh.gov.sg</p>
+                        </div>
+
+                        <!-- <?xml version="1.0" encoding="UTF-8"?><svg class="divider-hori s1-divider-hori"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 323.29 8">
+                            <line class="cls-1" x1="323.29" y1="4" y2="4" />
+                        </svg> -->
+
+                        <!-- s1 part 2ii -->
+                        <div class="col-row w-100 flex-center">
+                            <div class="col-row flex-center s1-icon-container">
+                                <div class="col">
+                                    <div class="col-row s1-icon-rows">
+                                        <div class="col w-20">
+                                            <img class="section1-icons" src="/images/casesLogo.svg" alt="No. of Cases">
+                                        </div>
+
+                                        <div class="col w-80 flex-container-start">
+                                            <p class="paragraph ">No. of Cases: <br>
+                                                2,213,795 / 5,640,000 (Singapore Population)
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-row">
+                                        <div class="col w-20">
+                                            <img class="section1-icons" src="/images/recoveredLogo.svg"
+                                                alt="No. of Recovered Cases">
+                                        </div>
+
+                                        <div class="col w-80 flex-container-start">
+                                            <p class="paragraph">No. of Recovered Cases: <br> 2,141,169</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="col-row s1-icon-rows">
+                                        <div class="col w-20">
+                                            <img class="section1-icons" src="/images/deathLogo.svg" alt="No. of Deaths">
+                                        </div>
+
+                                        <div class="col w-80 flex-container-start">
+                                            <p class="paragraph">No. of Deaths: <br> 1,720</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-row">
+                                        <div class="col w-20">
+                                            <img class="section1-icons" src="/images/worldLogo.svg"
+                                                alt="No. of Hospitalised">
+                                        </div>
+
+                                        <div class="col w-80 flex-container-start">
+                                            <p class="paragraph">Local Cases: 2,119,901 <br> Imported Cases: 88,115</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- end s1 part 2 -->
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- slide 2 -->
+            <div class="slide">
+
+                <div class="row w-95 flex-center">
+                    <div class="col w-55">
+                        <div class="slideshow-container flex-justtify-top">
+
+                            <!-- Full-width images with number and caption text -->
+                            <div class="mySlides fade">
+                                <div class="numbertext"></div>
+                                <div class="linebar-container">
+                                    <h1 class="title mb-30 align-center">No. of Cases (1 Dec - 14 Dec)</h1>
+                                    <canvas id="linebarChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="mySlides fade flex-column">
+                                <div class="numbertext"></div>
+                                <h1 class="title mb-30 align-center">No. of Cases (1 Dec - 14 Dec)</h1>
+                                <div class="s1-tablecontainer">
+                                    <table id="bi-monthly-dataTable" class="display">
+                                        <thead>
+                                            <tr>
+                                                <th>Dec 2021</th>
+                                                <th>No. of Cases</th>
+                                                <th>Dec 2021</th>
+                                                <th>No. of Cases</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="s1-tcell">1</td>
+                                                <td class="s1-tcell2">1134</td>
+                                                <td class="s1-tcell">2</td>
+                                                <td class="s1-tcell2">1056</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>986</td>
+                                                <td>4</td>
+                                                <td>771</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>756</td>
+                                                <td>6</td>
+                                                <td>721</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>654</td>
+                                                <td>8</td>
+                                                <td>742</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>689</td>
+                                                <td>10</td>
+                                                <td>512</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>455</td>
+                                                <td>12</td>
+                                                <td>376</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>244</td>
+                                                <td>14</td>
+                                                <td>103</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            <div class="mySlides fade">
+                                <div class="numbertext"></div>
+                                <div class="w-60 flex-column">
+                                    <h1 class="title mb-30 align-center">31 Dec Cases Proportions</h1>
+                                    <canvas id="pieChart"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Next and previous buttons -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                            <div class="dot-group">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+                        </div>
+
+                        <div class="s1-linebar-source">
+                            <p class="sources">Sources: data.gov.sg, moh.gov.sg</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col w-35 flex-container-start padding-right">
+                        <h1 class="title s1-title-edit">- 91%</h1>
+                        <h1 class="title s1-title">Drop In No. of Cases At Start of December</h1>
+                        <p class="paragraph">
+                            The statistics show that number of cases per day within the first 2 weeks of December dipped
+                            significantly by 91%.<br><br>
+                            2275 patients were discharged, including 366 seniors aged above 60.<br><br>
+
+                            2079 new cases reported on 31 Dec.
+                            2030 were reported in the community
+                            40 in the workers dormitories
+                            9 cases were imported
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- slide 3 -->
+            <div class="slide">
+
+                <div class="row w-95 flex-center">
+
+                    <div class="col w-55 h-100">
+                        <div class="slideshow-container2">
+
+                            <div class="mySlides2 fade">
+                                <div class="numbertext"></div>
+                                <div class="s1-line-container">
+                                    <h1 class="title">Total Deaths (Sept 2021 - Dec 2022)</h1>
+                                    <canvas id="lineDeaths"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="mySlides2 fade">
+                                <div class="numbertext"></div>
+                                <div class="s1-stacked-container">
+                                    <h1 class="title title-stacked">All-time Death Proportions by Age and Vaccination
+                                        Status</h1>
+                                    <canvas id="stackedAgeDeaths"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="mySlides2 fade">
+                                <div class="numbertext"></div>
+                                <div class="s1-donut-container">
+                                    <h1 class="title title-donut">All-time Death Proportions by Age</h1>
+                                    <canvas id="donutAgeDeaths"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="mySlides2 fade">
+                                <div class="numbertext"></div>
+                                <div class="s1-donut-container">
+                                    <h1 class="title title-donut">All-time Death Proportions by Vaccination Status</h1>
+                                    <canvas id="donutStatusDeaths"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Next and previous buttons -->
+                            <!-- <a class="prev2" onclick="plusSlides2(-1)">&#10094;</a>
+                            <a class="next2" onclick="plusSlides2(1)">&#10095;</a> -->
+
+                            <div class="dot-group">
+                                <span class="dot2" onclick="currentSlide2(1)"></span>
+                                <span class="dot2" onclick="currentSlide2(2)"></span>
+                                <span class="dot2" onclick="currentSlide2(3)"></span>
+                            </div>
+
+                            <div class="s1-linebar-source">
+                                <p class="sources">Sources: data.gov.sg, moh.gov.sg</p>
+                            </div>
+
+                            <div class="btn-grp">
+                                <button class="btn" id="allDeaths">All-time Deaths</button>
+                                <button class="btn" id="ageDeaths">Deaths by Age</button>
+                                <button class="btn" id="statusDeaths">Deaths by Vaccination Status</button>
+                                <button class="btn" id="agestatusDeaths">Deaths by Age & Vaccination Status</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col w-35 flex-container-start padding-right h-100 flex-spread">
+
+                        <div class="text-box">
+                            <div class="text-box-title">
+                                <div class="text-box-title-first">90%</div>
+                                <div>Drop In<br>No. of Deaths</div>
+                            </div>
+
+                            <div class="text-box-para">
+                                The number of Covid-19 related deaths have <br>dipped by 90% since its peak surge in Nov
+                                2021.
+                                <br>The number of deaths has been stable and consistently low.
+
+                            </div>
+                            <div class="text-box-btn">
+                                <button class="btn2" id="allDeaths2">View All-time Deaths</button>
+                            </div>
+                        </div>
+
+                        <div class="text-box">
+                            <div class="text-box-title">
+                                <div class="text-box-title-first">96%</div>
+                                <div>Deaths Aged<br>60+ Years Old</div>
+                            </div>
+
+                            <div class="text-box-para">
+                                A large of number of deaths were those of ages above 60.<br><br>
+
+                                80+ Group (63%)<br>
+                                70 - 79 Group (21%)<br>
+                                60 -69 Group (12%)
+                            </div>
+                            <div class="text-box-btn">
+                                <button class="btn2" id="ageDeaths2">View Deaths by Age</button>
+                            </div>
+                        </div>
+
+                        <div class="text-box">
+                            <div class="text-box-title">
+                                <div class="text-box-title-first">78%</div>
+                                <div>Deaths<br>Unvaccinated</div>
+                            </div>
+
+                            <div class="text-box-para">
+                                A large of number of deaths were unvaccinated individuals.<br><br>
+
+                                Unvaccinated (78%)<br>
+                                Minimum Protection (11%)<br>
+                                Full Regime (11%)
+                            </div>
+                            <div class="text-box-btn">
+                                <button class="btn2" id="statusDeaths2">View Deaths by Status</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- section 2 -->
+        <div class="section">
+            <div class="row">
+                <div class="col w-100">
+                    <div class="col-row h-50">
+
+                        <!-- 1. donut -->
+                        <div class="col w-10 h-100 flex-container-end relative-container">
+                            <div>
+                                <h1 class="title s2-t1">96%</h1>
+                                <h2 class="title s2-t2">Completed Regime</h2>
+                                <p class="paragraph s2-p">As at 14 December 2021
+                                    96% of of the eligible population (aged 12 years and above) have completed
+                                    their full regime or received two doses of Covid-19 vaccines.</p>
+                            </div>
+                        </div>
+
+                        <div class="col w-40 h-100">
+                            <canvas id="doughnutChart"></canvas>
+                        </div>
+
+                        <!-- 2. waffle -->
+                        <div class="col w-40 h-100">
+                            <div id="waffleChart"></div>
+                        </div>
+
+                        <div class="col w-10 flex-container-start">
+                            <h1 class="title s2-t1 start">87/100</h1>
+                            <h2 class="title s2-t2 start">Fully Vaccinated</h2>
+                            <p class="paragraph s2-p start">For every 100 people in Singapore:<br><br>
+                                88 - received their first dose<br>
+                                87 - fully vaccinated
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <?xml version="1.0" encoding="UTF-8"?><svg class="divider" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 8 323.29">
+                        <line class="cls-1" x1="4" x2="4" y2="323.29" />
+                    </svg>
+
+                    <?xml version="1.0" encoding="UTF-8"?><svg class="divider-hori s2-divider-hori"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 323.29 8">
+                        <line class="cls-1" x1="323.29" y1="4" y2="4" />
+                    </svg>
+
+                    <div class="col-row h-50">
+
+                        <!-- 3. bar -->
+                        <div class="col w-10 h-100 flex-container-end">
+                                <h1 class="title s2-t1 cust">Age</h1>
+                                <h2 class="title s2-t2 cust">Vaccination Status</h2>
+                                <p class="paragraph s2-p">
+                                    Unvaccinated in terms of Age Groups:<br>
+                                    12 - 29 (13%)<br>
+                                    30 - 49 (10%)<br>
+                                    50 - 69 (8%)<br>
+                                    70+ (13%)
+                                </p>
+                        </div>
+
+                        <div class="col w-30 h-100 mr">
+                            <canvas id="barChart"></canvas>
+                        </div>
+
+                        <!-- 4. people -->
+                        <div class="col w-40 h-100">
+                            <div class="row-col w-100">
+                                <img class="section2-icons" src="images/personIcon.svg" alt="Person Icon">
+                                <img class="section2-icons" src="images/personIcon.svg" alt="Person Icon">
+                                <img class="section2-icons" src="images/personIcon.svg" alt="Person Icon">
+                                <img class="section2-icons" src="images/personIcon.svg" alt="Person Icon">
+                                <img class="section2-icons" src="images/personIcon.svg" alt="Person Icon">
+                            </div>
+
+                            <div class="row-col w-100">
+                                <img class="section2-icons" src="images/personIcon.svg" alt="Person Icon">
+                                <img class="section2-icons" src="images/personIcon.svg" alt="Person Icon">
+                                <img class="section2-icons" src="images/personIcon.svg" alt="Person Icon">
+                                <img class="section2-icons" src="images/personIcon.svg" alt="Person Icon">
+                                <img class="section2-icons" src="images/person_blankIcon.svg" alt="Person Icon">
+                            </div>
+                        </div>
+
+                        <div class="col w-10 flex-container-start">
+                            <h1 class="title s2-t1 start">90%</h1>
+                            <h2 class="title s2-t2 start">Vaccinated</h2>
+                            <p class="paragraph s2-p start">9/10 Singaporeans have been vaccinated<br><br>
+                                With new Covid-19 variants such as Omicron surfacing, full vaccination will have to
+                                include booster shots as well.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- section 3 -->
+        <div class="section">
+            <img src="images/bgbuidling.png" alt="bg" class="s3-bg">
+
+            <div class="row">
+                <div class="s3-container">
+                    <h6 class="title s3-title">Vaccination Centres</h6>
+
+                    <img id="sg-map" src="images/singapore.svg">
+
+                    <div class="absolute-container w-50 s3-map-icons">
+                        <?xml version="1.0" encoding="UTF-8"?><svg id="s3-icons" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 456.01 177.41">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: #965d99;
+                                        fill-rule: evenodd;
+                                    }
+                                </style>
+                            </defs>
+                            <g id="Bedoks">
+                                <path class="cls-1" id="Bedok"
+                                    d="m378.58,137.2h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                            <g id="Bukit_Batok">
+                                <path class="cls-1" id="BukitBatok"
+                                    d="m60.29,69.28h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                            <g id="Bukit_Merah">
+                                <path class="cls-1" id="Bukit_Merah"
+                                    d="m156.67,149.2h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                            <g id="Choa_Chu_Kang">
+                                <path class="cls-1" id="CCK"
+                                    d="m109.63,23.79h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                            <g id="Clementi">
+                                <path class="cls-1" id="Clementi"
+                                    d="m88.56,120.62h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                            <g id="Geylang">
+                                <path class="cls-1" id="Geylang"
+                                    d="m223.69,122.62h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                            <g id="Hougang">
+                                <path class="cls-1" id="Hougang"
+                                    d="m256.09,177.19h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                            <g id="Jurong">
+                                <path class="cls-1" id="Jurong"
+                                    d="m57.83,160.2h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                            <g id="Marine_Parade">
+                                <path class="cls-1" id="MarineParade"
+                                    d="m298.88,95.28h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                            <g id="Outram">
+                                <path class="cls-1" id="Outrams"
+                                    d="m153.67,88.28h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                            <g id="Pasir_Ris">
+                                <path class="cls-1" id="Pasir_Ris"
+                                    d="m445.4,94.28h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                            <g id="Pioneer">
+                                <path class="cls-1" id="Pioneer"
+                                    d="m9.39,143.8h0s0,0,0,0l-.02-.02s-.05-.04-.08-.06c-.07-.06-.17-.14-.3-.24-.25-.21-.62-.51-1.05-.9-.86-.77-2.02-1.86-3.17-3.14-1.15-1.28-2.33-2.78-3.22-4.37-.89-1.58-1.53-3.31-1.53-5.05,0-2.65,1.05-5.2,2.93-7.07,1.88-1.88,4.42-2.93,7.07-2.93s5.2,1.05,7.07,2.93c1.88,1.88,2.93,4.42,2.93,7.07,0,1.74-.65,3.48-1.53,5.05-.89,1.59-2.07,3.08-3.22,4.37-1.16,1.29-2.31,2.37-3.17,3.14-.43.38-.79.69-1.05.9-.13.1-.23.19-.3.24-.03.03-.06.05-.08.06l-.02.02h0s0,0,0,0t-.61-.79l.61.79c-.36.28-.87.28-1.23,0Zm.61-.79l-.61.79s0,0,.61-.79Zm3-13c0,1.66-1.34,3-3,3s-3-1.34-3-3,1.34-3,3-3,3,1.34,3,3Z" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- tooltip contents -->
+
+                    <div id="bedok-content" class="tooltip-content" style="display: none;">
+                        <img src="images/bedok.jpeg" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Bedok Polytechnic</strong></h3>
+                        <p>Address: <br>
+                            11 Bedok North Street 1, Heartbeat@Bedok #02-01, #03-01, Singapore 469662</p>
+                        <p>Hotline: 6343 1121</p>
+                        <p class="vaccine-type t-P">Vaccine Type: Pfizer</p>
+                    </div>
+
+                    <div id="bukitbatok-content" class="tooltip-content" style="display: none;">
+                        <img src="images/bukitbatok.jpeg" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Bukit Batok Polytechnic</strong></h3>
+                        <p>Address: 50 Bukit Batok West Avenue 3, Singapore 659164</p>
+                        <p>Hotline: 6343 1122</p>
+                        <p class="vaccine-type t-M">Vaccine Type: Moderna</p>
+                    </div>
+
+                    <div id="bukitmerah-content" class="tooltip-content" style="display: none;">
+                        <img src="images/bukitmerah.jpeg" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Bukit Merah Polytechnic</strong></h3>
+                        <p>Address: 162 Bukit Merah Central Level 4, Singapore 150163</p>
+                        <p>Hotline: 6343 1123</p>
+                        <p class="vaccine-type t-P">Vaccine Type: Pfizer</p>
+                    </div>
+
+
+                    <div id="cck-content" class="tooltip-content" style="display: none;">
+                        <img src="images/cck.jpeg" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Choa Chu Kang Polytechnic</strong></h3>
+                        <p>Address: 2 Teck Whye Crescent, Singapore 6888462</p>
+                        <p>Hotline: 6343 1124</p>
+                        <p class="vaccine-type t-M">Vaccine Type: Moderna</p>
+                    </div>
+
+                    <div id="clementi-content" class="tooltip-content" style="display: none;">
+                        <img src="images/clementi.jpeg" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Clementi Polytechnic</strong></h3>
+                        <p>Address: 451 Clementi Avenue 3, Singapore 120451</p>
+                        <p>Hotline: 6343 1125</p>
+                        <p class="vaccine-type t-P">Vaccine Type: Pfizer</p>
+                    </div>
+
+                    <div id="geylang-content" class="tooltip-content" style="display: none;">
+                        <img src="images/geylang.jpeg" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Geylang Polytechnic</strong></h3>
+                        <p>Address: 21 Geylang East Central, Singapore 389707</p>
+                        <p>Hotline: 6343 1126</p>
+                        <p class="vaccine-type t-P">Vaccine Type: Pfizer</p>
+                    </div>
+
+                    <div id="hougang-content" class="tooltip-content" style="display: none;">
+                        <img src="images/hougang.jpeg" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Hougang Polytechnic</strong></h3>
+                        <p>Address: 89 Hougang Avenue 4, Singapore 538829</p>
+                        <p>Hotline: 6765 1121</p>
+                        <p class="vaccine-type t-P">Vaccine Type: Pfizer</p>
+                    </div>
+
+                    <div id="jurong-content" class="tooltip-content" style="display: none;">
+                        <img src="images/jurong.png" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Jurong Polytechnic</strong></h3>
+                        <p>Address: 190 Jurong East Avenue 1, Singapore 609788</p>
+                        <p>Hotline: 6765 1122</p>
+                        <p class="vaccine-type t-P">Vaccine Type: Pfizer</p>
+                    </div>
+
+                    <div id="marineparade-content" class="tooltip-content" style="display: none;">
+                        <img src="images/marineparade.jpeg" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Marine Parade Polytechnic</strong></h3>
+                        <p>Address: 80 Marine Parade Central, Singapore 440080</p>
+                        <p>Hotline: 6765 1123</p>
+                        <p class="vaccine-type t-P">Vaccine Type: Pfizer</p>
+                    </div>
+
+                    <div id="outram-content" class="tooltip-content" style="display: none;">
+                        <img src="images/outram.jpeg" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Outram Polytechnic</strong></h3>
+                        <p>Address: 3 Second Hospital Avenue, #02-00 Health Promotion Board Building, Singapore 168937
+                        </p>
+                        <p>Hotline: 6765 1124</p>
+                        <p class="vaccine-type t-C">Vaccine Type: Comirnaty</p>
+                    </div>
+
+                    <div id="pasirris-content" class="tooltip-content" style="display: none;">
+                        <img src="images/pasirris.jpeg" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Pasir Ris Polytechnic</strong></h3>
+                        <p>Address: 1 Pasir Ris Drive 4, Singapore 519457</p>
+                        <p>Hotline: 6765 1125</p>
+                        <p class="vaccine-type t-C">Vaccine Type: Comirnaty</p>
+                    </div>
+
+                    <div id="pioneer-content" class="tooltip-content" style="display: none;">
+                        <img src="images/pioneer.jpeg" alt="RP" class="tooltip-img">
+                        <h3 class="tooltip-header"><strong>Pioneer Polytechnic</strong></h3>
+                        <p>Address: 26 Jurong West Street 61, Singapore 648201</p>
+                        <p>Hotline: 6765 1126</p>
+                        <p class="vaccine-type t-M">Vaccine Type: Moderna</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="s3-table-container">
+                <table id="location-table" class="display">
+                    <thead>
+                        <tr>
+                            <th>Names</th>
+                            <th>Address</th>
+                            <th>Vaccine Type</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bedok Polyclinic</td>
+                            <td>11 Bedok North Street 1 Heartbeat@Bedok #02-01, #03-01, Singapore 469662</td>
+                            <td>Pfizer</td>
+                            <td>6343 1121</td>
+                        </tr>
+	
+                        <tr>
+                            <td>Bukit Batok Polyclinic</td>
+                            <td>50 Bukit Batok West Avenue 3, Singapore 659164</td>
+                            <td>Moderna</td>
+                            <td>6343 1122</td>
+                        </tr>
+                        <tr>
+                            <td>Bukit Merah Polyclinic</td>
+                            <td>162 Bukit Merah Central Level 4, Singapore 150163</td>
+                            <td>Pfizer</td>
+                            <td>6343 1123</td>
+                        </tr>
+                        <tr>
+                            <td>Choa Chu Kang Polyclinic</td>
+                            <td>2 Teck Whye Crescent, Singapore 688846</td>
+                            <td>Moderna</td>
+                            <td>6343 1124</td>
+                        </tr>
+                        <tr>
+                            <td>Clementi Polyclinic</td>
+                            <td>451 Clementi Avenue 3, Singapore 120451</td>
+                            <td>Pfizer</td>
+                            <td>6343 1125</td>
+                        </tr>
+                        <tr>
+                            <td>Geylang Polyclinic</td>
+                            <td>21 Geylang East Central, Singapore 389707</td>
+                            <td>Pfizer</td>
+                            <td>6343 1126</td>
+                        </tr>
+                        <tr>
+                            <td>Hougang Polyclinic</td>
+                            <td>89 Hougang Avenue 4, Singapore 538829</td>
+                            <td>Pfizer</td>
+                            <td>6765 1121</td>
+                        </tr>
+
+                        <tr>
+                            <td>Jurong Polyclinic</td>
+                            <td>190 Jurong East Avenue 1, Singapore 609788</td>
+                            <td>Pfizer</td>
+                            <td>6765 1122</td>
+                        </tr>
+
+                        <tr>
+                            <td>Marine Parade Polyclinic</td>
+                            <td>80 Marine Parade Central, Singapore 440080</td>
+                            <td>Pfizer</td>
+                            <td>6765 1123</td>
+                        </tr>
+
+                        <tr>
+                            <td>Outram Polyclinic Polyclinic</td>
+                            <td>3 Second Hospital Avenue, #02-00 Health Promotion Board Building, Singapore 168937</td>
+                            <td>Comirnaty</td>
+                            <td>6765 1124</td>
+                        </tr>
+
+                        <tr>
+                            <td>Pasir Ris  Polyclinic</td>
+                            <td>1 Pasir Ris Drive 4, Singapore 519457</td>
+                            <td>Comirnaty</td>
+                            <td>6765 1125</td>
+                        </tr>
+
+                        <tr>
+                            <td>Pioneer Polyclinic</td>
+                            <td>26 Jurong West Street 61, Singapore 648201</td>
+                            <td>Moderna</td>
+                            <td>6765 1126</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="s3-btn-container">
+                <button class="btn-map" id="btnMap">View Table</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- JS CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <!-- Fullpage.js -->
+    <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+    <!-- DataTables js -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <!-- ApexCharts.js -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Tippy.js -->
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script> import 'tippy.js/animations/scale.css'; </script>
+    <!-- JavaScripts -->
+    <script type="text/javascript" src="js/javascript.js"></script>
+    <script type="text/javascript" src="js/animations.js"></script>
+</body>
+
+</html>
